@@ -1,4 +1,4 @@
-pyTelegramBotAPI==3.9.19
+pyTelegramBotAPI==3.12.4
 mysql-connector-python
 schedule
 urllib3==1.26.6

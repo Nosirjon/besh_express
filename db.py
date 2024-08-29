@@ -10,10 +10,13 @@ def user(chat_id,name, phone_number):
     conn = None
     # Подключение к базе данных
     conn = mysql.connector.connect(
-        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
-        user="doadmin",
-        password="AVNS_VSLcWQ0vFSrPTS7QO88",
-        database="defaultdb"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -48,10 +51,13 @@ def get_cashback(value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -67,10 +73,13 @@ def get_indicator(value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
-        user="doadmin",
-        password="AVNS_VSLcWQ0vFSrPTS7QO88",
-        database="defaultdb"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -85,10 +94,13 @@ def get_date(value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
-        user="doadmin",
-        password="AVNS_VSLcWQ0vFSrPTS7QO88",
-        database="defaultdb"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -105,10 +117,13 @@ def change_value_of_indicator(chat_id,value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
-        user="doadmin",
-        password="AVNS_VSLcWQ0vFSrPTS7QO88",
-        database="defaultdb"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -121,10 +136,13 @@ def get_phone(value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
-        user="doadmin",
-        password="AVNS_VSLcWQ0vFSrPTS7QO88",
-        database="defaultdb"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -140,10 +158,13 @@ def get_chat_id(value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
-        user="doadmin",
-        password="AVNS_VSLcWQ0vFSrPTS7QO88",
-        database="defaultdb"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -160,10 +181,13 @@ def take_cash(phone_number, sum):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -177,10 +201,13 @@ def get_cash_from_number(phone_number):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -197,10 +224,13 @@ def get_all_user():
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
-        user="doadmin",
-        password="AVNS_VSLcWQ0vFSrPTS7QO88",
-        database="defaultdb"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()
@@ -218,10 +248,13 @@ def check_chat_id(chat_id):
         cursor = None
         conn = None
         conn = mysql.connector.connect(
-        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
-        user="doadmin",
-        password="AVNS_VSLcWQ0vFSrPTS7QO88",
-        database="defaultdb"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
         cursor = conn.cursor()
@@ -253,10 +286,13 @@ def get_all_chat_id():
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
-        user="doadmin",
-        password="AVNS_VSLcWQ0vFSrPTS7QO88",
-        database="defaultdb"
+        username = 'doadmin'
+        password = 'AVNS_VSLcWQ0vFSrPTS7QO88'
+        host = 'private-db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com'
+        port = '25060'
+        database = 'defaultdb'
+        sslmode = 'REQUIRED'
+        
     )
 
     cursor = conn.cursor()

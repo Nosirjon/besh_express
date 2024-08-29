@@ -1,9 +1,7 @@
 from datetime import date
 import mysql.connector 
 
-
 def user(chat_id,name, phone_number):
-    
     cursor = None
     conn = None
     # Подключение к базе данных

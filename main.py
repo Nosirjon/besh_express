@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
 import telebot
-from telebot import types, re
+from telebot import types
 from db import user,get_cashback, get_indicator,get_date, change_value_of_indicator, get_phone,check_chat_id, get_all_chat_id
 from info_brands import name_brands, photo_brands, info_brands, uzb_info_brads
 import schedule

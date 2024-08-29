@@ -10,10 +10,10 @@ def user(chat_id,name, phone_number):
     conn = None
     # Подключение к базе данных
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
+        user="doadmin",
+        password="AVNS_VSLcWQ0vFSrPTS7QO88",
+        database="defaultdb"
     )
 
     cursor = conn.cursor()
@@ -67,10 +67,10 @@ def get_indicator(value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
+        user="doadmin",
+        password="AVNS_VSLcWQ0vFSrPTS7QO88",
+        database="defaultdb"
     )
 
     cursor = conn.cursor()
@@ -85,10 +85,10 @@ def get_date(value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
+        user="doadmin",
+        password="AVNS_VSLcWQ0vFSrPTS7QO88",
+        database="defaultdb"
     )
 
     cursor = conn.cursor()
@@ -105,10 +105,10 @@ def change_value_of_indicator(chat_id,value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
+        user="doadmin",
+        password="AVNS_VSLcWQ0vFSrPTS7QO88",
+        database="defaultdb"
     )
 
     cursor = conn.cursor()
@@ -121,10 +121,10 @@ def get_phone(value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
+        user="doadmin",
+        password="AVNS_VSLcWQ0vFSrPTS7QO88",
+        database="defaultdb"
     )
 
     cursor = conn.cursor()
@@ -140,10 +140,10 @@ def get_chat_id(value):
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
+        user="doadmin",
+        password="AVNS_VSLcWQ0vFSrPTS7QO88",
+        database="defaultdb"
     )
 
     cursor = conn.cursor()
@@ -197,10 +197,10 @@ def get_all_user():
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
+        user="doadmin",
+        password="AVNS_VSLcWQ0vFSrPTS7QO88",
+        database="defaultdb"
     )
 
     cursor = conn.cursor()
@@ -218,11 +218,11 @@ def check_chat_id(chat_id):
         cursor = None
         conn = None
         conn = mysql.connector.connect(
-            host="localhost",
-            user="khakimo1_id_rsa",
-            password="Parol_100",
-            database="khakimo1_date_base"
-        )
+        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
+        user="doadmin",
+        password="AVNS_VSLcWQ0vFSrPTS7QO88",
+        database="defaultdb"
+    )
 
         cursor = conn.cursor()
 
@@ -253,10 +253,10 @@ def get_all_chat_id():
     cursor = None
     conn = None
     conn = mysql.connector.connect(
-        host="localhost",
-        user="khakimo1_id_rsa",
-        password="Parol_100",
-        database="khakimo1_date_base"
+        host="db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com",
+        user="doadmin",
+        password="AVNS_VSLcWQ0vFSrPTS7QO88",
+        database="defaultdb"
     )
 
     cursor = conn.cursor()

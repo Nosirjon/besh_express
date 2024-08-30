@@ -431,16 +431,16 @@ def location (message):
 
 
 
-def send_message():
-        for i in get_all_chat_id():
-            of = i[0]
-            bot.send_photo(f'{of}', photo=open('1.jpg','rb'))
-            bot.send_message(f'{of}', text='Assalomu Aleykum azizlar, muqaddas Juma ayyomi muborak bo\'lsin!')        
+# def send_message():
+#         for i in get_all_chat_id():
+#             of = i[0]
+#             bot.send_photo(f'{of}', photo=open('1.jpg','rb'))
+#             bot.send_message(f'{of}', text='Assalomu Aleykum azizlar, muqaddas Juma ayyomi muborak bo\'lsin!')        
 
 if __name__ =='__main__': 
     
-    schedule.every().friday.at('09:00').do(send_message)
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
-        # bot.polling(non_stop=True)
+    # schedule.every().friday.at('09:00').do(send_message)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
+    bot.polling(non_stop=True)

@@ -16,7 +16,7 @@ id_message = None
 @bot.message_handler(commands=['start'])
 def start(message):
 
-    global id_message
+
     markup = types.InlineKeyboardMarkup(row_width=2)
     Rus = types.InlineKeyboardButton(text='Rus🇷🇺', callback_data='Rus')
     Uzb = types.InlineKeyboardButton(text='Uzb🇺🇿', callback_data='Uzb')
@@ -38,6 +38,8 @@ def language(message):
 
 @bot.message_handler(commands=['info'])
 def info(message):
+
+    
     global language
     if language == 'Rus':
         bot.send_message(message.chat.id, text='С этого бота можно заказать замены масла!')

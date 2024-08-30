@@ -39,7 +39,7 @@ def language(message):
 @bot.message_handler(commands=['info'])
 def info(message):
 
-    
+
     global language
     if language == 'Rus':
         bot.send_message(message.chat.id, text='С этого бота можно заказать замены масла!')
@@ -54,7 +54,7 @@ def info(message):
 def contact(message):
     
     global language
-    global id_message
+    
     nomer = message.contact.phone_number
     get_nomer = nomer[-9:]
     take_nomer = '+998'+get_nomer 

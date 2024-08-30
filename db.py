@@ -191,7 +191,7 @@ def get_cash_from_number(phone_number):
         password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
         host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
         port = '25060',
-        database = 'defaultdb',
+        database = 'defaultdb'
         
     )
 
@@ -213,7 +213,7 @@ def get_all_user():
         password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
         host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
         port = '25060',
-        database = 'defaultdb',
+        database = 'defaultdb'
         
     )
 

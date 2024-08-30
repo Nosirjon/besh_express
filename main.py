@@ -54,7 +54,7 @@ def info(message):
 def contact(message):
     
     global language
-    
+
     nomer = message.contact.phone_number
     get_nomer = nomer[-9:]
     take_nomer = '+998'+get_nomer 
@@ -84,7 +84,7 @@ def contact(message):
         markup.add(submit)
         bot.send_message(message.chat.id, text=f'Ro\'yxatdan o\'tdingiz✅', reply_markup=markup)
         user(message.chat.id, message.contact.first_name, take_nomer)
-#------------конец главной меню ------------------------- 
+
 
 # Начало заявки
 @bot.message_handler(content_types=['text'])

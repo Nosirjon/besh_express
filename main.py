@@ -9,26 +9,26 @@ import time
 bot = telebot.TeleBot('7326806711:AAFGgOZnZUAncC7pNOC1WdV7F1txt7ZHKyU')
 
 zayavka_chat_id = -4254884051
-language = ''
-id_message = ''
+language = None
+id_message = None
 
 # start
 @bot.message_handler(commands=['start'])
 def start(message):
-    
+
     global id_message
     markup = types.InlineKeyboardMarkup(row_width=2)
     Rus = types.InlineKeyboardButton(text='Rus🇷🇺', callback_data='Rus')
     Uzb = types.InlineKeyboardButton(text='Uzb🇺🇿', callback_data='Uzb')
     markup.add(Rus, Uzb)
     bot.send_message(message.chat.id, text='Выбирите язык 🇷🇺 \nTil tanlang 🇺🇿', reply_markup=markup)
-    
-    
+
+
 
 # Из меню выбор язык
 @bot.message_handler(commands=['language'])
 def language(message):
-   
+
     markup = types.InlineKeyboardMarkup(row_width=2)
     Rus = types.InlineKeyboardButton(text='Rus🇷🇺', callback_data='Rus')
     Uzb = types.InlineKeyboardButton(text='Uzb🇺🇿', callback_data='Uzb')
@@ -45,10 +45,12 @@ def info(message):
         bot.send_message(message.chat.id, text='Ushbu bot orqali joyda moyalmashtrish arizasini qoldirish mumkin!')
     else:
         bot.send_message(message.chat.id, text="Вы еще не выбрали язык\n Siz til tanlamadingiz")
+
 #  ------------главное меню бота--------------- 
 
 @bot.message_handler(content_types=['contact'])
 def contact(message):
+    
     global language
     global id_message
     nomer = message.contact.phone_number

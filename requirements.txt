@@ -1,3 +1,4 @@
 pyTelegramBotAPI-
 mysql-connector-python
 schedule
+sqlite

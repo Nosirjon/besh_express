@@ -1,18 +1,20 @@
 from datetime import date
-import mysql.connector 
+import mysql.connector
+import sqlite3
 
 def user(chat_id,name, phone_number):
     cursor = None
     conn = None
     # Подключение к базе данных
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
     cursor = conn.cursor()
 
@@ -45,14 +47,15 @@ def user(chat_id,name, phone_number):
 def get_cashback(value):
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
     cursor = conn.cursor()
     cursor.execute(f'SELECT cashback FROM bot_express WHERE chat_id = \'{value}\'')
@@ -66,14 +69,15 @@ def get_cashback(value):
 def get_indicator(value):
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
     cursor = conn.cursor()
     cursor.execute(f'SELECT indicator FROM bot_express WHERE chat_id = \'{value}\'')
@@ -86,14 +90,15 @@ def get_indicator(value):
 def get_date(value):
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
     cursor = conn.cursor()
     cursor.execute(f'SELECT date FROM bot_express WHERE chat_id = \'{value}\'')
  
@@ -107,14 +112,15 @@ def change_value_of_indicator(chat_id,value):
 
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
     cursor = conn.cursor()
 
@@ -125,14 +131,15 @@ def change_value_of_indicator(chat_id,value):
 def get_phone(value):
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
     cursor = conn.cursor()
     cursor.execute(f'SELECT phone_number FROM bot_express WHERE chat_id = \'{value}\'')
@@ -146,14 +153,15 @@ def get_phone(value):
 def get_chat_id(value):
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
     cursor = conn.cursor()
     cursor.execute(f'SELECT chat_id FROM bot_express WHERE phone_number = \'{value}\'')
  
@@ -167,14 +175,15 @@ def get_chat_id(value):
 def take_cash(phone_number, sum):
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
     cursor = conn.cursor()
     update_query = f"""UPDATE bot_express SET cashback = ?, date = ?  WHERE phone_number = ?"""
@@ -186,14 +195,15 @@ def take_cash(phone_number, sum):
 def get_cash_from_number(phone_number):
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
     cursor = conn.cursor()
     cursor.execute(f'SELECT cashback FROM bot_express WHERE phone_number =\'{phone_number}\'')
@@ -208,14 +218,15 @@ def get_all_user():
 
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM user')
@@ -231,14 +242,15 @@ def check_chat_id(chat_id):
         # Подключение к базе данных MySQL
         cursor = None
         conn = None
-        conn = mysql.connector.connect(
-        user= 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+        conn = sqlite3.connect('base.db')
+    #     conn = mysql.connector.connect(
+    #     user= 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
         cursor = conn.cursor()
 
@@ -268,14 +280,16 @@ def check_chat_id(chat_id):
 def get_all_chat_id():
     cursor = None
     conn = None
-    conn = mysql.connector.connect(
-        user = 'doadmin',
-        password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-        host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-        port = '25060',
-        database = 'defaultdb'
+    conn = sqlite3.connect('base.db')
+    conn = sqlite3.connect('base.db')
+    # conn = mysql.connector.connect(
+    #     user = 'doadmin',
+    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
+    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
+    #     port = '25060',
+    #     database = 'defaultdb'
         
-    )
+    # )
 
     cursor = conn.cursor()
 

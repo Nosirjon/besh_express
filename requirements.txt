@@ -1,4 +1,4 @@
 pyTelegramBotAPI==4.22.1
 urllib3==1.26.6
 pip==24.2
-pysqlite3
+pysqlite3==0.5.3

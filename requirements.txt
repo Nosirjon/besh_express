@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 pytelegrambotapi
 mysql-connector-python
 schedule
+=======
+pyTelegramBotAPI==3.12.1
+urllib3==1.26.6
+pip==24.2
+>>>>>>> b24668d2292b15d4b1c78d68a610dc545e3dbdf3

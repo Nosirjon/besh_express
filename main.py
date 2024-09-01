@@ -1,188 +1,22 @@
-# -*- coding: utf-8 -*- 
 import telebot
+<<<<<<< HEAD
 from telebot import types
 from db import user,get_cashback, get_indicator,get_date, change_value_of_indicator, get_phone,check_chat_id, get_all_chat_id
 from info_brands import name_brands, photo_brands, info_brands, uzb_info_brads
 import schedule
 import time
+=======
+>>>>>>> b24668d2292b15d4b1c78d68a610dc545e3dbdf3
 
-bot = telebot.TeleBot('7326806711:AAFGgOZnZUAncC7pNOC1WdV7F1txt7ZHKyU')
+bot = telebot.TeleBot('6992564836:AAHWId4lFuR0N0iImdIMcJ9VG7RFFdMvjFw')
 
-zayavka_chat_id = -4254884051
-language = ''
-id_message = ''
 
-# start
-@bot.message_handler(commands=['start'])
+@bot.meesage_handler(comands=['start'])
 def start(message):
-    
-    global id_message
-    markup = types.InlineKeyboardMarkup(row_width=2)
-    Rus = types.InlineKeyboardButton(text='Rus🇷🇺', callback_data='Rus')
-    Uzb = types.InlineKeyboardButton(text='Uzb🇺🇿', callback_data='Uzb')
-    markup.add(Rus, Uzb)
-    bot.send_message(message.chat.id, text='Выбирите язык 🇷🇺 \nTil tanlang 🇺🇿', reply_markup=markup)
-    
-    
-
-# Из меню выбор язык
-@bot.message_handler(commands=['language'])
-def language(message):
-   
-    markup = types.InlineKeyboardMarkup(row_width=2)
-    Rus = types.InlineKeyboardButton(text='Rus🇷🇺', callback_data='Rus')
-    Uzb = types.InlineKeyboardButton(text='Uzb🇺🇿', callback_data='Uzb')
-    markup.add(Rus, Uzb)
-    bot.send_message(message.chat.id, text='Выбирите язык 🇷🇺 \nTil tanlang 🇺🇿', reply_markup=markup)
-   
-
-@bot.message_handler(commands=['info'])
-def info(message):
-    global language
-    if language == 'Rus':
-        bot.send_message(message.chat.id, text='С этого бота можно заказать замены масла!')
-    elif language == 'Uzb':
-        bot.send_message(message.chat.id, text='Ushbu bot orqali joyda moyalmashtrish arizasini qoldirish mumkin!')
-    else:
-        bot.send_message(message.chat.id, text="Вы еще не выбрали язык\n Siz til tanlamadingiz")
-#  ------------главное меню бота--------------- 
-
-@bot.message_handler(content_types=['contact'])
-def contact(message):
-    global language
-    global id_message
-    nomer = message.contact.phone_number
-    get_nomer = nomer[-9:]
-    take_nomer = '+998'+get_nomer 
-    
-    bot.delete_message(message.chat.id, message.message_id)
-    
-    if language == 'Rus':
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-        keshback = types.InlineKeyboardButton(text='Кешбэк💰')
-        catalog = types.InlineKeyboardButton(text='Каталог📂')
-        last_change_oil = types.InlineKeyboardButton(text='Последняя дата замены масла📆')
-        submit = types.InlineKeyboardButton(text='Оставить заявку📝')
-        markup.add(keshback,catalog)
-        markup.add(last_change_oil)
-        markup.add(submit)
-        bot.send_message(message.chat.id, text=f'Вы прошли регистрацию ✅', reply_markup=markup)
-        user(message.chat.id, message.contact.first_name, take_nomer)
-
-    elif language == 'Uzb':
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-        keshback = types.InlineKeyboardButton(text='Keshbek💰')
-        catalog = types.InlineKeyboardButton(text='Katalog📂')
-        last_change_oil = types.InlineKeyboardButton(text='Oxirgi moy almashtirilgan sana📆')
-        submit = types.InlineKeyboardButton(text='Ariza qoldirish📝')
-        markup.add(keshback,catalog)
-        markup.add(last_change_oil)
-        markup.add(submit)
-        bot.send_message(message.chat.id, text=f'Ro\'yxatdan o\'tdingiz✅', reply_markup=markup)
-        user(message.chat.id, message.contact.first_name, take_nomer)
-#------------конец главной меню ------------------------- 
-
-# Начало заявки
-@bot.message_handler(content_types=['text'])
-def text(message):
-
-#    на русском кэшбек
-    if message.text =='Кешбэк💰':
-        cashback = get_cashback(message.chat.id)
-        bot.send_message(message.chat.id, text=f'Уважаемый {message.from_user.first_name} ваш кэшбэк равен {cashback} сум!')
-
-#  на узбекском кэшбек
-    elif message.text == 'Keshbek💰':
-        cashback = get_cashback(message.chat.id)
-        bot.send_message(message.chat.id, text=f'Xurmatli {message.from_user.first_name} sizning keshbekingiz {cashback} so\'mga teng!')
-
-#  на русском 
-    elif message.text == 'Оставить заявку📝':
-        keyboard = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
-        button_geo = types.KeyboardButton(text="Отправить местоположение📍", request_location=True)
-        keyboard.add(button_geo)
-        bot.send_message(message.chat.id, "Поделитесь местоположением!", reply_markup=keyboard)
-
-# на узбекском 
-    elif message.text == 'Ariza qoldirish📝':
-        keyboard = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
-        button_geo = types.KeyboardButton(text="Lokaciya blan bo\'lishish📍", request_location=True)
-        keyboard.add(button_geo)
-        bot.send_message(message.chat.id, "Arizangiz ko\'ribchiqilishi uchu lokaciyangiz blan bo\'lishing!", reply_markup=keyboard)
-
-# последняя дата замены даты на русском 
-    elif message.text == 'Последняя дата замены масла📆':
-        date = get_date(message.chat.id)
-        indicator = get_indicator(message.chat.id)
-        keyboard = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
-        button_date = types.InlineKeyboardButton(text='🔄Обновить')
-        btn_back = types.InlineKeyboardButton(text='🔙Назад')
-        keyboard.add(button_date,btn_back)
-        bot.send_message(message.chat.id, text=f'Показатели \nИндикатор : {indicator} \nДата : {date}', reply_markup=keyboard)
-
-# на узбекском
-    elif message.text =='Oxirgi moy almashtirilgan sana📆':
-        date = get_date(message.chat.id)
-        indicator = get_indicator(message.chat.id)
-        keyboard = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
-        button_date = types.InlineKeyboardButton(text='🔄Yagilash')
-        btn_back = types.InlineKeyboardButton(text='🔙Orqaga')
-        keyboard.add(button_date,btn_back)
-        bot.send_message(message.chat.id, text=f'Ko\'rsatgichlar \nIndikator : {indicator} \nSana : {date}', reply_markup=keyboard)
-      
-# ------------------обновлене  индикатора ----------------------
-#   на русском
-    elif message.text =='🔄Обновить':
-        
-        bot.send_message(message.chat.id, text='Отправьте значение индикатора')        
-        @bot.message_handler(content_types=['text'])
-        def save(message):
-            global text 
-            text = message.text
-            try:
-                float(text)
-                change_value_of_indicator(message.chat.id, text)
-                bot.send_message(message.chat.id, text='Записан')
-                markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-                keshback = types.InlineKeyboardButton(text='Кешбэк💰')
-                catalog = types.InlineKeyboardButton(text='Каталог📂')
-                last_change_oil = types.InlineKeyboardButton(text='Последняя дата замены масла📆')
-                submit = types.InlineKeyboardButton(text='Оставить заявку📝')
-                markup.add(keshback,catalog)
-                markup.add(last_change_oil)
-                markup.add(submit)
-                bot.send_message(message.chat.id, text=f'Главное меню', reply_markup=markup)
-            except ValueError:
-                bot.send_message(message.chat.id, text='Вы ввели не правильное знаечение, если хотите все же добавить нажмите на кнопку ОБНОВИТЬ и введите цыфры а не буквы!')
-              
-        bot.register_next_step_handler(message, save)    
-
-#  на узбекском
-    elif message.text =='🔄Yngilash':
-        bot.send_message(message.chat.id, text = 'Boshqaruv panelidagi INDIKATOR qiymatini kiriting')
-        @bot.message_handler(content_types=['text'])
-        def save(message):
-            global text 
-            text = message.text
-            try:
-                float(text)
-                change_value_of_indicator(message.chat.id, text)
-                bot.send_message(message.chat.id, text='Muvaffaqiyatli yozib olindi!')
-                markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-                keshback = types.InlineKeyboardButton(text='Keshbek💰')
-                catalog = types.InlineKeyboardButton(text='Katalog📂')
-                last_change_oil = types.InlineKeyboardButton(text='Oxirgi moy almashtirilgan sana📆')
-                submit = types.InlineKeyboardButton(text='Ariza qoldirish📝')
-                markup.add(keshback,catalog)
-                markup.add(last_change_oil)
-                markup.add(submit)
-                bot.send_message(message.chat.id, text=f'Bosh menyu', reply_markup=markup)
-            except ValueError:
-                bot.send_message(message.chat.id, text='Siz noto\'g\'ri qiymat kiritdingiz, agar siz hali ham qo\'shmoqchi bo\'lsangiz, Yangilash tugmasini bosing va harflarni emas, raqamlarni kiriting!')
-              
-        bot.register_next_step_handler(message, save)
+    bot.send_message(message.chat.id, text='Бот работает')
 
 
+<<<<<<< HEAD
 #  кнопка назад на русском 
     elif message.text =='🔙Назад':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
@@ -445,3 +279,6 @@ if __name__ =='__main__':
     #     schedule.run_pending()
     #     time.sleep(1)
     bot.polling(non_stop=True)
+=======
+bot.polling(none_stop=True)
+>>>>>>> b24668d2292b15d4b1c78d68a610dc545e3dbdf3

@@ -1,5 +1,4 @@
 from datetime import date
-import mysql.connector
 import sqlite3
 
 def user(chat_id,name, phone_number):
@@ -238,20 +237,6 @@ def get_all_user():
     return date
 
 def check_chat_id(chat_id):
-    try:
-        # Подключение к базе данных MySQL
-        cursor = None
-        conn = None
-        conn = sqlite3.connect('base.db')
-    #     conn = mysql.connector.connect(
-    #     user= 'doadmin',
-    #     password = 'AVNS_VSLcWQ0vFSrPTS7QO88',
-    #     host = 'db-mysql-nyc3-12595-do-user-16381338-0.k.db.ondigitalocean.com',
-    #     port = '25060',
-    #     database = 'defaultdb'
-        
-    # )
-
     # Подключение к базе данных MySQL
     cursor = None
     conn = None

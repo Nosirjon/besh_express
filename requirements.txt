@@ -1,0 +1,3 @@
+pytelegrambotapi
+mysql-connector-python
+schedule

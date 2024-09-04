@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 python-telegram-bot>=13.5, <20
-=======
 pyTelegramBotAPI==4.22.1
 urllib3==1.26.6
 pip==24.2
 pysqlite3==0.5.3
->>>>>>> 63aa8e47c2e8ba9f6620d712a65f9eb0be145545
+

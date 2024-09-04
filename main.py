@@ -3,7 +3,6 @@ import telebot
 from telebot import types, re
 from db import user,get_cashback, get_indicator,get_date, change_value_of_indicator, get_phone,check_chat_id, get_all_chat_id
 from info_brands import name_brands, photo_brands, info_brands, uzb_info_brads
-import schedule
 import time
 bot = telebot.TeleBot('7326806711:AAFGgOZnZUAncC7pNOC1WdV7F1txt7ZHKyU')
 
